@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --gap: 85px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #eeeced;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+#title {
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 200px;
+  aspect-ratio: 1;
+  border: 8px solid #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:nth-child(1) {
+  rotate: 10deg;
+  translate: calc(-2 * var(--gap));
+}
+
+.card:nth-child(2) {
+  rotate: 5deg;
+  translate: calc(-1 * var(--gap));
+}
+
+.card:nth-child(3) {
+  rotate: -3deg;
+}
+
+.card:nth-child(4) {
+  rotate: -10deg;
+  translate: var(--gap);
+}
+
+.card:nth-child(5) {
+  rotate: 2deg;
+  translate: calc(2 * var(--gap));
+}
+
+.big-paragraph {
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.links {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.links a {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  transition: 0.2s;
+}
+
+.links a:hover {
+  transform: translateY(-5px);
+  color: rgba(0, 0, 0, 1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.links .icon {
+  height: 16px;
+  width: 16px;
+}
+
+.particle {
+  position: fixed;
+  background-color: pink;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gap: 40px;
+  }
+
+  #title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    height: 300px;
+  }
+
+  .card {
+    width: 150px;
+  }
+
+  .big-paragraph {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+  }
+
+  .heart-particle {
+    position: fixed;
+    color: pink;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#touchButton {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid pink;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+#touchButton:hover {
+    background-color: #ffe6e6;
+}
+
+#touchButton:active {
+    transform: scale(0.95);
+}
+
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: pink;
+  border-radius: 50%;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.5); }
+}
+
+#touchButton {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid pink;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+#touchButton:hover {
+  background-color: #ffe6e6;
+}
+
+#touchButton:active {
+  transform: scale(0.95);
+}
+
+#particles-container, #moving-particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: pink;
+  border-radius: 50%;
+  animation: pulse 2s infinite alternate;
+}
+
+.moving-particle {
+  position: absolute;
+  background-color: pink;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 1; }
+}
+
+#touchButton {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+#touchButton:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 182, 193, 0.4),
+      transparent
+  );
+  transition: all 0.4s;
+}
+
+#touchButton:hover:before {
+  left: 100%;
+}
+
+#touchButton.clicked {
+  background-color: pink;
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+}
